@@ -1,12 +1,13 @@
 import './App.css'
+import Hero from "./companents/Hero"
 
 function App() {
 
 
   return (
-    <>
-      Hello World
-    </>
+    <div className='w-full h-full'>
+      <Hero/>
+    </div>
   )
 }
 
