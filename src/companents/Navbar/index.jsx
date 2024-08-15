@@ -42,10 +42,10 @@ const Navbar = ({ nav, handleNav }) => {
 					whileInView={nav ? "visible" : "hidden"}
 					variants={navVariants}
 					exit='hidden'
-					className='navbar-container'>
+					className='navbar-container '>
 					<div className='top-details'>
 						<div className='img__cover'>
-							<img src={ProfileImg} alt='Main' className='profile-pic-small' />
+							<img src={ProfileImg} alt='Main' className='profile-pic-small object-contain' />
 						</div>
 						<Link
 							activeClass='active'
@@ -55,8 +55,8 @@ const Navbar = ({ nav, handleNav }) => {
 							duration={500}
 							onClick={handleNav}
 							to='home'
-							className='profile-name'>
-							Peace Jinadu-Paul
+							className='profile-name sans-font'>
+							Salih Kuloğlu
 						</Link>
 						<NavLinks handleNav={handleNav} />
 					</div>
@@ -70,8 +70,8 @@ const Navbar = ({ nav, handleNav }) => {
 							to='home'
 							className='mid-links'>
 							<FaHome className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								Home
+							<li className='mid-link sans-font' onClick={handleNav}>
+								AnaSayfa
 							</li>
 						</Link>
 						<Link
@@ -83,8 +83,8 @@ const Navbar = ({ nav, handleNav }) => {
 							to='about'
 							className='mid-links'>
 							<FiUser className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								About
+							<li className='mid-link sans-font' onClick={handleNav}>
+								Hakkında
 							</li>
 						</Link>
 						<Link
@@ -96,8 +96,8 @@ const Navbar = ({ nav, handleNav }) => {
 							to='skills'
 							className='mid-links'>
 							<FaLaptop className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								Skills
+							<li className='mid-link sans-font' onClick={handleNav}>
+								Yetenekler
 							</li>
 						</Link>
 						<Link
@@ -109,8 +109,8 @@ const Navbar = ({ nav, handleNav }) => {
 							to='services'
 							className='mid-links'>
 							<BiServer className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								Services
+							<li className='mid-link sans-font' onClick={handleNav}>
+								Deneyim
 							</li>
 						</Link>
 						<Link
@@ -122,8 +122,8 @@ const Navbar = ({ nav, handleNav }) => {
 							to='works'
 							className='mid-links'>
 							<BiBookContent className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								Works
+							<li className='mid-link sans-font' onClick={handleNav}>
+								Projeler
 							</li>
 						</Link>
 						<Link
@@ -135,14 +135,14 @@ const Navbar = ({ nav, handleNav }) => {
 							to='contact'
 							className='mid-links'>
 							<BiEnvelope className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
-								Contact
+							<li className='mid-link sans-font' onClick={handleNav}>
+								İletişim
 							</li>
 						</Link>
 					</ul>
 					<div className='copy'>
 						<small className='copyright'>
-							© Copyright ©2022 <br /> All rights reserved |
+							© Copyright ©2024 <br /> All rights reserved |
 						</small>
 					</div>
 				</motion.div>

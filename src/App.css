@@ -15,3 +15,49 @@
     font-weight: 600;
     font-style: "normal";
 }
+
+.hero-contact {
+	text-decoration: none;
+	color: #32ACFF;
+  font-size: 80%;
+	font-weight: 500;
+	letter-spacing: 3px;
+	padding: 1rem 2rem;
+	border: 1px solid #32ACFF;
+	background-color: transparent;
+	width: fit-content;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+	transition: 0.4s transform ease-in-out;
+	will-change: transform;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+}
+
+.hero-contact::after {
+	background-color: #32ACFF;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translate(-100%, 0);
+	transform-origin: top right;
+	transition: 0.8s transform ease-out;
+	will-change: transform;
+	z-index: -1;
+}
+
+.hero-contact:hover::after {
+	transform: translate(0, 0);
+}
+
+.hero-contact:hover {
+	color: #fff;
+	will-change: transform;
+}
