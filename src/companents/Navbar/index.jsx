@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../assets/styles/Navbar.css";
 import { FaHome, FaLaptop } from "react-icons/fa";
 import { BiBookContent, BiServer, BiEnvelope } from "react-icons/bi";
@@ -8,6 +8,14 @@ import ProfileImg from "../../assets/images/profile.png";
 import NavLinks from "./Navlink";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import logo_w from "../../assets/images/logo_w.png"
+import logo_b from "../../assets/images/logo_b.png"
+import { IoMoonOutline } from "react-icons/io5";
+import { IoSunnyOutline } from "react-icons/io5";
+import { IoMenuOutline } from "react-icons/io5";
+import { IoCloseOutline } from "react-icons/io5";
+import { initializeDrawerButton } from "../../assets/js/drawer";
+
 
 const navVariants = {
 	hidden: {
@@ -29,126 +37,83 @@ const navVariants = {
 };
 
 const Navbar = ({ nav, handleNav }) => {
+
+	useEffect(initializeDrawerButton, []);
 	return (
-		<AnimatePresence>
-			<motion.nav
-				initial={{ width: "0" }}
-				animate={
-					nav ? { width: "300px" } : { width: "0", transition: { delay: 1 } }
-				}
-				className={nav ? "navbar active" : "navbar"}>
-				<motion.div
-					initial='hidden'
-					whileInView={nav ? "visible" : "hidden"}
-					variants={navVariants}
-					exit='hidden'
-					className='navbar-container '>
-					<div className='top-details'>
-						<div className='img__cover'>
-							<img src={ProfileImg} alt='Main' className='profile-pic-small object-contain' />
-						</div>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							onClick={handleNav}
-							to='home'
-							className='profile-name sans-font'>
-							Salih Kuloğlu
-						</Link>
-						<NavLinks handleNav={handleNav} />
+		<>
+		<header id="header" class="fixed top-0 w-full h-16 z-50" data-astro-cid-3ef6ksr2="">
+			<div class="w-full h-full mx-auto px-5 max-w-screen-md">
+				<div class="relative h-full w-full" data-astro-cid-3ef6ksr2="">
+					<div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2="">
+						<a href="/" class="flex gap-2 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2="">
+							<img src={logo_b} alt="Salih Kuloğlu" class=" w-20  dark:hidden" data-astro-cid-3ef6ksr2=""/>
+							<img src={logo_w} alt="Salih Kuloğlu" class="w-20 hidden dark:block" data-astro-cid-3ef6ksr2=""/>
+						</a>
 					</div>
-					<ul className='mid-details'>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='home'
-							className='mid-links'>
-							<FaHome className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								AnaSayfa
-							</li>
-						</Link>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='about'
-							className='mid-links'>
-							<FiUser className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								Hakkında
-							</li>
-						</Link>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='skills'
-							className='mid-links'>
-							<FaLaptop className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								Yetenekler
-							</li>
-						</Link>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='services'
-							className='mid-links'>
-							<BiServer className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								Deneyim
-							</li>
-						</Link>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='works'
-							className='mid-links'>
-							<BiBookContent className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								Projeler
-							</li>
-						</Link>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							to='contact'
-							className='mid-links'>
-							<BiEnvelope className='mid-icon' />
-							<li className='mid-link sans-font' onClick={handleNav}>
-								İletişim
-							</li>
-						</Link>
-					</ul>
-					<div className='copy'>
-						<small className='copyright'>
-							© Copyright ©2024 <br /> All rights reserved |
-						</small>
+					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" data-astro-cid-3ef6ksr2="">
+						<nav class="hidden md:flex items-center justify-center text-sm gap-1" data-astro-cid-3ef6ksr2="">
+							<a href="/" class="h-8 rounded-full px-3 flex items-center justify-center transition-colors duration-300 ease-in-out bg-black dark:bg-white text-white dark:text-black" data-astro-cid-3ef6ksr2=""> Home </a>
+							<a href="/work" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2=""> Experience </a>
+							<a href="/blog" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2=""> Blog </a>
+							<a href="/projects" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2=""> Projects </a>
+						</nav>
 					</div>
-				</motion.div>
-			</motion.nav>
-		</AnimatePresence>
+					<div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1" >
+						
+						<button id="header-theme-button"  class="hidden  md:flex size-9 rounded-full p-2 items-center justify-center bg-transparent  hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" >
+							<div class="size-full  dark:hidden flex items-center justify-center" >
+								<IoSunnyOutline />
+							</div>
+							<div class="size-full hidden dark:flex items-center justify-center" >
+								<IoMoonOutline />
+							</div>
+						</button>
+						<button id="header-drawer-button"  class=" md:hidden size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2="">
+							<div id="drawer-open" class="size-full flex items-center justify-center" >
+								<IoMenuOutline />
+							</div>
+							<div id="drawer-close" class="size-full hidden  items-center justify-center" data-astro-cid-3ef6ksr2="">
+								<IoCloseOutline />
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out open" data-astro-cid-hxtyo74s="">
+			<nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s="">
+				<a href="/" class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s=""> Home </a>
+				<a href="/work" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s=""> Experience </a>
+				<a href="/blog" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s=""> Blog </a>
+				<a href="/projects" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s=""> Projects </a>
+			</nav>
+			<div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s="">
+				<a href="/search" aria-label="Search blog posts and projects on Ghulam Ahmed" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
+					<svg class="size-full" data-astro-cid-hxtyo74s="">
+						<use href="/ui.svg#search" data-astro-cid-hxtyo74s=""></use>
+					</svg>
+				</a>
+				<a href="/rss.xml" target="_blank" aria-label="Rss feed for Ghulam Ahmed" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
+					<svg class="size-full" data-astro-cid-hxtyo74s="">
+						<use href="/ui.svg#rss" data-astro-cid-hxtyo74s=""></use>
+					</svg>
+				</a>
+				<button id="drawer-theme-button" aria-label="Toggle light and dark theme" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
+					<svg class="block dark:hidden size-full" data-astro-cid-hxtyo74s="">
+						<use href="/ui.svg#sun" data-astro-cid-hxtyo74s=""></use>
+					</svg>
+					<svg class="hidden dark:block size-full" data-astro-cid-hxtyo74s="">
+						<use href="/ui.svg#moon" data-astro-cid-hxtyo74s=""></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		
+		</>
 	);
 };
 
 export default Navbar;
+
+

@@ -1,28 +1,3 @@
-<!doctype html>
-<html class="w-full h-full"  lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Salih Kuloğlu</title>
-  </head>
-  <body class="w-full h-full" >
-    <div class="w-full h-full" id="root"></div>
-    
-    <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- <script src="/src/assets/js/stars.js"></script> -->
-    <script src="/src/assets/js/animate.js"></script>
-
-  </body>
-</html>
-
-<script>
-
-
 function generateParticles(e) {
     let t = `${getRandom(2560)}px ${getRandom(2560)}px #000`;
     for (let n = 2; n <= e; n++)
@@ -38,7 +13,7 @@ function generateStars(e) {
 function getRandom(e) {
     return Math.floor(Math.random() * e)
 }
-function initBG() {
+export const initBg = () => {
 
     console.log('Merhaba initBG');
     const e = generateParticles(1e3)
@@ -62,9 +37,4 @@ function initBG() {
     g && (g.style.cssText = `\n      width: 1.5px;\n      height: 1.5px;\n      border-radius: 50%;\n      box-shadow: ${d};\n      `),
     l && (l.style.cssText = `\n      width: 2px;\n      height: 2px;\n      border-radius: 50%;\n      box-shadow: ${o};\n      `)
 }
-document.addEventListener("astro:after-swap", initBG),
-initBG();
-
-</script>
-
 

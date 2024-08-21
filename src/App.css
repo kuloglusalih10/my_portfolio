@@ -61,3 +61,26 @@
 	color: #fff;
 	will-change: transform;
 }
+
+.grill {
+	background-image: radial-gradient(transparent, #fff 87%), linear-gradient(90deg, #cbd5e1 1px, transparent 1px), linear-gradient(0deg, #cbd5e1 1px, transparent 1px);
+    background-repeat: repeat;
+    background-size: cover, 48px 48px, 48px 48px;
+    background-position: center, center 49px;
+}
+
+.own-font {
+	font-weight: 300;
+	font-size: 38px;
+	font: 300 38px / 1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+}
+
+@keyframes animateParticle {
+    0% {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-2000px)
+    }
+}
