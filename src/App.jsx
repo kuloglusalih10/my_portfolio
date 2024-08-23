@@ -1,4 +1,6 @@
+import './copy.css'
 import './App.css'
+
 import Hero from "./companents/Hero"
 
 function App() {

@@ -6,14 +6,17 @@ import { useEffect, useState } from 'react';
 import Navbar from '../Navbar';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { initBg } from '../../assets/js/stars';
+import profile from "../../assets/images/profile.png"
 
 
 const index = () => {
 
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        initBg();
+
         setTimeout(() => setLoading(false), 3000)
+        initBg();
     }, []);
 
 
@@ -28,33 +31,6 @@ const index = () => {
           }
         }
     }
-
-    const [nav, setNav] = useState(false)
-
-    const handleNav = () =>{
-        setNav(!nav)
-    }
-
-    const closeNav = () =>{
-    if(nav){
-        setNav(false)
-    }
-    }
-
-    const menuVariants = {
-		hidden: {
-			opacity: 0,
-		},
-		visible: {
-			opacity: 1,
-			scale: [1, 1.2, 1.5, 1.2, 1],
-			rotate: [0, 0, 360, 360, 360],
-			borderRadius: ["50%", "50%", "50%", "50%", "50%"],
-			transition: {
-				duration: 1,
-			},
-		},
-	};
 
     const contactVariants = {
 		hidden: {
@@ -79,42 +55,114 @@ const index = () => {
 
              
 
-                <div className=''>
-                    <div id='particles1' className='fixed inset-0 -z-20'></div>
-                    <div id='particles2' className='fixed inset-0 -z-20'></div>
-                    <div id='particles3' className='fixed inset-0 -z-20'></div>
+                <div className='absolute inset-0 block dark:hidden'>
+                    <div id='particles1' className='fixed inset-0 '></div>
+                    <div id='particles2' className='fixed inset-0 '></div>
+                    <div id='particles3' className='fixed inset-0 '></div>
                 </div>
 
-                {/* <div className='inset-0 block '>
+                <div className='absolute inset-0 bg-black hidden dark:block'>
+                    
                     <div id='stars1' className='fixed inset-0'></div>
                     <div id='stars2' className='fixed inset-0'></div>
                     <div id='stars3' className='fixed inset-0'></div>
-                </div> */}
-
-                <div id="planetcont" class="animate absolute inset-0 top-1/4 overflow-hidden show -z-10"> 
-                    <div id="crescent" class="absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%">
-                        <div id="planet" class="w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center"> 
-                            <div id="blur" class="w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl"></div> 
-                        </div> 
-                    </div> 
                 </div>
 
-                <motion.div
-                    // viewport={{ once: true }}
-                    variants={menuVariants}
-                    initial='hidden'
-                    whileInView='visible'
-                    onClick={handleNav}
-                    className='menu-icon float-end h-min w-min cursor-pointer absolute right-20 top-14'>
-                    {nav ? <FaTimes color='#fff' size={28} /> : <FaBars size={28} color='#fff' />}
-                </motion.div>
+                <Navbar />
 
+                <div id="galaxy" className="fixed inset-0">
+                    <div className="hidden dark:block">
+                        <svg id="twinkle-star" className="template" width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="74" cy="74" r="11" fill="white"></circle>
+                            <rect y="141.421" width="200" height="10" transform="rotate(-45 0 141.421)" fill="url(#paint0_linear_4_2)"></rect>
+                            <rect x="7.07107" width="200" height="10" transform="rotate(45 7.07107 0)" fill="url(#paint1_linear_4_2)"></rect>
+                            <defs>
+                                <linearGradient id="paint0_linear_4_2" x1="0" y1="146.421" x2="200" y2="146.421" gradientUnits="userSpaceOnUse">
+                                    <stop stopColor="#1E1E1E" ></stop>
+                                    <stop offset="0.445" stopColor="white"></stop>
+                                    <stop offset="0.58721" stopColor="white"></stop>
+                                    <stop offset="1" stopColor="#1E1E1E"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_4_2" x1="7.07107" y1="5" x2="207.071" y2="5" gradientUnits="userSpaceOnUse">
+                                    <stop stopColor="#1E1E1E"></stop>
+                                    <stop offset="0.42" stopColor="white"></stop>
+                                    <stop offset="0.555" stopColor="white"></stop>
+                                    <stop offset="1" stopColor="#1E1E1E"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        
+                        <div id="meteors">
+                            <div className="shower ur">
+                                <div className="meteor left-[669px] top-[7px]"  ></div>
+                            </div>
+                            <div className="shower dr"></div>
+                            <div className="shower dl"></div>
+                            <div className="shower ul">
+                                <div className="meteor left-[377px] top-[123px]" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <svg id="twinkle-star" className="template twinkle absolute left-[767px] top-[281px] w-[22px] h-[22px]" width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                        <circle cx="74" cy="74" r="11" fill="white"></circle>
+                        <rect y="141.421" width="200" height="10" transform="rotate(-45 0 141.421)" fill="url(#paint0_linear_4_2)"></rect>
+                        <rect x="7.07107" width="200" height="10" transform="rotate(45 7.07107 0)" fill="url(#paint1_linear_4_2)"></rect>
+                        <defs>
+                            <linearGradient id="paint0_linear_4_2" x1="0" y1="146.421" x2="200" y2="146.421" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#1E1E1E"></stop>
+                                <stop offset="0.445" stopColor="white"></stop>
+                                <stop offset="0.58721" stopColor="white"></stop>
+                                <stop offset="1" stopColor="#1E1E1E"></stop>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_4_2" x1="7.07107" y1="5" x2="207.071" y2="5" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#1E1E1E"></stop>
+                                <stop offset="0.42" stopColor="white"></stop>
+                                <stop offset="0.555" stopColor="white"></stop>
+                                <stop offset="1" stopColor="#1E1E1E"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
 
-                <Navbar nav={nav} handleNav={handleNav} />
+                <section className="relative h-screen w-full">
+                    <div id="planetcont" className="animate absolute inset-0 top-1/4 overflow-hidden show">
+                        <div id="crescent" className="absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%">
+                            <div id="planet" className="w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center">
+                                <div id="blur" className="w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="animate absolute h-full w-full flex items-center justify-center show">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <div className="p-5 pt-14 xs:pt-8 text-center">
+                                <img src={profile} alt="Ghulam Ahmed" className="object-cover w-36 h-36 xs:w-48 xs:h-48 rounded-full mx-auto border-4 border-neutral-600 dark:border-neutral-400"/>
+                                    
+                                    <p className="relative py-3 text-3xl sm:text-4xl md:text-5xl lg: text:6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-neutral-100 dark:to-neutral-600 text-center font-sans font-bold">
+                                    Salih Kuloğlu
+                                    </p>
+                                    <p className="animated text-sm md:text-base lg:text-lg opacity-75">
+                                    Full-stack Developer | Bilgisayar Mühendisi | Yazılım Mühendisi
+                                    </p>
+                                    <div id="ctaButtons" className="animated flex flex-wrap gap-4 justify-center mt-5">
+                                        <a href="/blog" className="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+                                        Read my blog
+                                        </a>
+                                        <a href="/work" className="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+                                        View my work
+                                        </a>
+                                    </div>
+                                    <a href="mailto:contact@gahmed.com" className="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center group p-2 text-sm gap-x-2 mt-4">
+                                        <span>Email me</span>
+                                        <span className="w-2 h-2 rounded-full bg-green-400 duration-500 animate-pulse"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </section>
                 
                 
 
-                <div className='flex flex-col items-center justify-center h-full w-full'>
+                {/* <div className='flex flex-col items-center justify-center h-full w-full'>
                     <motion.h2 variants={loadText} initial='hidden' animate='visible' className=' select-none own-font text-white '>
                         Merhaba, ben <span className='text-dark-blue'>Salih 👋</span>
                     </motion.h2>
@@ -147,14 +195,13 @@ const index = () => {
                             Özgeçmiş<GoDownload size={20} className='cv-icon ml-2' />
                         </a>
                     </motion.span>
-                </div>
+                </div> */}
 
                 <div className='w-full h-[500px] bg-white'>
 
                 </div>
 
-                {/* <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" className="w-8 h-8" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z"></path></svg> */}
-            </div>
+             </div>
         </>
     )
 }

@@ -1,13 +1,5 @@
 import React, { useEffect } from "react";
 import "../../assets/styles/Navbar.css";
-import { FaHome, FaLaptop } from "react-icons/fa";
-import { BiBookContent, BiServer, BiEnvelope } from "react-icons/bi";
-import { FiUser } from "react-icons/fi";
-import { Link } from "react-scroll";
-import ProfileImg from "../../assets/images/profile.png";
-import NavLinks from "./Navlink";
-import { motion } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
 import logo_w from "../../assets/images/logo_w.png"
 import logo_b from "../../assets/images/logo_b.png"
 import { IoMoonOutline } from "react-icons/io5";
@@ -36,12 +28,12 @@ const navVariants = {
 	},
 };
 
-const Navbar = ({ nav, handleNav }) => {
+const Navbar = () => {
 
 	useEffect(initializeDrawerButton, []);
 	return (
 		<>
-		<header id="header" class="fixed top-0 w-full h-16 z-50" data-astro-cid-3ef6ksr2="">
+		<header id="header" class="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2="">
 			<div class="w-full h-full mx-auto px-5 max-w-screen-md">
 				<div class="relative h-full w-full" data-astro-cid-3ef6ksr2="">
 					<div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2="">
@@ -61,8 +53,10 @@ const Navbar = ({ nav, handleNav }) => {
 					<div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1" >
 						
 						<button id="header-theme-button"  class="hidden  md:flex size-9 rounded-full p-2 items-center justify-center bg-transparent  hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" >
-							<div class="size-full  dark:hidden flex items-center justify-center" >
-								<IoSunnyOutline />
+							<div class="size-full flex items-center justify-center dark:hidden " >
+								<div className="dark:hidden block">
+									<IoSunnyOutline />
+								</div>
 							</div>
 							<div class="size-full hidden dark:flex items-center justify-center" >
 								<IoMoonOutline />
@@ -81,7 +75,7 @@ const Navbar = ({ nav, handleNav }) => {
 			</div>
 		</header>
 
-		<div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out open" data-astro-cid-hxtyo74s="">
+		<div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
 			<nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s="">
 				<a href="/" class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s=""> Home </a>
 				<a href="/work" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s=""> Experience </a>

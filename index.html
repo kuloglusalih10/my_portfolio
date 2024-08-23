@@ -1,8 +1,8 @@
 <!doctype html>
 <html class="w-full h-full"  lang="en">
-  <head>
+  <head >
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo_b.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,55 +16,13 @@
     
     <!-- <script src="/src/assets/js/stars.js"></script> -->
     <script src="/src/assets/js/animate.js"></script>
+    <script src="./src/assets/js/twinkleStar.js"></script>
 
   </body>
 </html>
 
-<script>
+<script src="./src/assets/js/scroll.js"></script>
+<script src="./src/assets/js/theme.js"></script>
 
-
-function generateParticles(e) {
-    let t = `${getRandom(2560)}px ${getRandom(2560)}px #000`;
-    for (let n = 2; n <= e; n++)
-        t += `, ${getRandom(2560)}px ${getRandom(2560)}px #000`;
-    return t
-}
-function generateStars(e) {
-    let t = `${getRandom(2560)}px ${getRandom(2560)}px #fff`;
-    for (let n = 2; n <= e; n++)
-        t += `, ${getRandom(2560)}px ${getRandom(2560)}px #fff`;
-    return t
-}
-function getRandom(e) {
-    return Math.floor(Math.random() * e)
-}
-function initBG() {
-
-    console.log('Merhaba initBG');
-    const e = generateParticles(1e3)
-    t = generateParticles(500)
-    n = generateParticles(250)
-    a = document.getElementById("particles1")
-    i = document.getElementById("particles2")
-    r = document.getElementById("particles3");
-
-    
-    a && (a.style.cssText = `\n      width: 1px;\n      height: 1px;\n      border-radius: 50%;\n      box-shadow: ${e};\n      animation: animStar 50s linear infinite;\n      `),
-    i && (i.style.cssText = `\n      width: 1.5px;\n      height: 1.5px;\n      border-radius: 50%;\n      box-shadow: ${t};\n      animation: animateParticle 100s linear infinite;\n      `),
-    r && (r.style.cssText = `\n      width: 2px;\n      height: 2px;\n      border-radius: 50%;\n      box-shadow: ${n};\n      animation: animateParticle 150s linear infinite;\n      `);
-    const s = generateStars(1e3)
-      , d = generateStars(500)
-      , o = generateStars(250)
-      , x = document.getElementById("stars1")
-      , g = document.getElementById("stars2")
-      , l = document.getElementById("stars3");
-    x && (x.style.cssText = `\n      width: 1px;\n      height: 1px;\n      border-radius: 50%;\n      box-shadow: ${s};\n      `),
-    g && (g.style.cssText = `\n      width: 1.5px;\n      height: 1.5px;\n      border-radius: 50%;\n      box-shadow: ${d};\n      `),
-    l && (l.style.cssText = `\n      width: 2px;\n      height: 2px;\n      border-radius: 50%;\n      box-shadow: ${o};\n      `)
-}
-document.addEventListener("astro:after-swap", initBG),
-initBG();
-
-</script>
 
 
