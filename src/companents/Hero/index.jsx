@@ -1,12 +1,11 @@
 import React from 'react'
-import { ReactTyped } from "react-typed";
-import { GoDownload } from "react-icons/go";
 import { motion } from "framer-motion";
 import { useEffect, useState } from 'react';
 import Navbar from '../Navbar';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import { initBg } from '../../assets/js/stars';
 import profile from "../../assets/images/profile.png"
+import { BsDownload } from "react-icons/bs";
+import cv from "../../assets/static/salih_kuloglu_CV.pdf"
 
 
 const index = () => {
@@ -19,32 +18,6 @@ const index = () => {
         initBg();
     }, []);
 
-
-    const loadText = {
-        hidden: {
-          opacity: 0,
-        },
-        visible: {
-          opacity: 1,
-          transition:{
-            duration: 1
-          }
-        }
-    }
-
-    const contactVariants = {
-		hidden: {
-			opacity: 0,
-			x: "-50%",
-		},
-		visible: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1.4,
-			},
-		},
-	};
 
   
 
@@ -124,7 +97,7 @@ const index = () => {
                     </svg>
                 </div>
 
-                <section className="relative h-screen w-full">
+                <motion.section initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 0, opacity: 0 }} transition={{ duration: 0.7 }}  className="relative h-screen w-full">
                     <div id="planetcont" className="animate absolute inset-0 top-1/4 overflow-hidden show">
                         <div id="crescent" className="absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%">
                             <div id="planet" className="w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center">
@@ -133,7 +106,7 @@ const index = () => {
                         </div>
                     </div>
                     <div className="animate absolute h-full w-full flex items-center justify-center show">
-                        <div className="relative w-full h-full flex items-center justify-center">
+                        <div className="mt-[80px] relative w-full h-full flex items-center justify-center">
                             <div className="p-5 pt-14 xs:pt-8 text-center">
                                 <img src={profile} alt="Ghulam Ahmed" className="object-cover w-36 h-36 xs:w-48 xs:h-48 rounded-full mx-auto border-4 border-neutral-600 dark:border-neutral-400"/>
                                     
@@ -144,58 +117,21 @@ const index = () => {
                                     Full-stack Developer | Bilgisayar Mühendisi | Yazılım Mühendisi
                                     </p>
                                     <div id="ctaButtons" className="animated flex flex-wrap gap-4 justify-center mt-5">
-                                        <a href="/blog" className="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
-                                        Read my blog
+                                        <a href={cv}  download className="flex  items-center justify-center gap-x-3 py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+                                        Özgeçmiş <BsDownload />
                                         </a>
                                         <a href="/work" className="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
                                         View my work
                                         </a>
                                     </div>
-                                    <a href="mailto:contact@gahmed.com" className="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center group p-2 text-sm gap-x-2 mt-4">
+                                    <a href="mailto:kuloglusalih10@gmail.com" className="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center group p-2 text-sm gap-x-2 mt-4">
                                         <span>Email me</span>
                                         <span className="w-2 h-2 rounded-full bg-green-400 duration-500 animate-pulse"></span>
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                </section>
-                
-                
-
-                {/* <div className='flex flex-col items-center justify-center h-full w-full'>
-                    <motion.h2 variants={loadText} initial='hidden' animate='visible' className=' select-none own-font text-white '>
-                        Merhaba, ben <span className='text-dark-blue'>Salih 👋</span>
-                    </motion.h2>
-                    
-                    
-
-                    <ReactTyped
-                        strings={[
-                            "Bilgisayar Mühendisi",
-                            "Yazılım Mühendisi",
-                            "Full Stack Developer",
-                        ]}
-                        typeSpeed={30}
-                        backSpeed={40}
-                        //attr="placeholder"
-                        loop
-                        style={{backgroundColor: 'transparent'}}
-                        >
-                        <input className='bg-transparent text-2xl sans-font mt-4 text-white w-full text-center' type="text" />
-                    </ReactTyped>
-
-                     <motion.span
-                        variants={contactVariants}
-                        initial='hidden'
-                        whileInView='visible'>
-                        <a
-                            href='Peace Jinadu-Paul CV.pdf'
-                            download='Peace Jinadu-Paul CV'
-                            className='hero-contact mt-4'>
-                            Özgeçmiş<GoDownload size={20} className='cv-icon ml-2' />
-                        </a>
-                    </motion.span>
-                </div> */}
+                    </div>
+                </motion.section>
 
                 <div className='w-full h-[500px] bg-white'>
 

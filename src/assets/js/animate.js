@@ -8,3 +8,4 @@ function animate() {
     ))
 }
 document.addEventListener("DOMContentLoaded", animate)
+console.log("animate js ")
