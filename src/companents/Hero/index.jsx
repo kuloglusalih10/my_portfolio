@@ -6,6 +6,7 @@ import { initBg } from '../../assets/js/stars';
 import profile from "../../assets/images/profile.png"
 import { BsDownload } from "react-icons/bs";
 import cv from "../../assets/static/salih_kuloglu_CV.pdf"
+import About from "../About"
 
 
 const index = () => {
@@ -133,9 +134,9 @@ const index = () => {
                     </div>
                 </motion.section>
 
-                <div className='w-full h-[500px] bg-white'>
 
-                </div>
+                <About/>
+                
 
              </div>
         </>
