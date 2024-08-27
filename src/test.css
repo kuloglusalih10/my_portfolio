@@ -4571,7 +4571,6 @@ button.button_secondary__v9Tcf:hover {
 }
 
 .badges_fullContainer__IxLYL {
-    border-top: 1px solid var(--primary-dark);
     background: var(--background-dim);
     margin-left: calc(var(--padding-left)*-1);
     margin-right: calc(var(--padding-right)*-1);
@@ -4612,10 +4611,10 @@ button.button_secondary__v9Tcf:hover {
     display: flex;
     flex-direction: column;
     gap: var(--size-1x);
-    border: 1px solid var(--primary-dark);
+    /* border: 1px solid var(--primary-dark);
     border-radius: 2rem;
     background: var(--background-dim2);
-    box-shadow: 0 0 30px var(--background);
+    box-shadow: 0 0 30px var(--background); */
     overflow: hidden;
     padding: var(--padding);
     --padding: 2rem;

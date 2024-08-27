@@ -32,9 +32,10 @@ const navVariants = {
 const Navbar = () => {
 
 	useEffect(initializeDrawerButton, []);
+	
 	return (
 		<>
-		<header  id="header" className="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2="">
+		<header  id="header" className="fixed top-0 w-full h-16 z-[999900]  sticky-1" data-astro-cid-3ef6ksr2="">
 			<div className="w-full h-full mx-auto px-5 max-w-screen-md">
 				<div className="relative h-full w-full" data-astro-cid-3ef6ksr2="">
 					<div className="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2="">
@@ -76,7 +77,7 @@ const Navbar = () => {
 			</div>
 		</header>
 
-		<div id="drawer" className="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
+		<div id="drawer" className="fixed inset-0 h-0 z-[200] overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s="">
 			<nav className="flex flex-col items-center space-y-2" >
 				<a href="/" className="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s=""> Home </a>
 				<a href="/work" className="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s=""> Experience </a>

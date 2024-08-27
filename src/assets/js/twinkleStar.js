@@ -20,7 +20,6 @@ setTimeout(() => {
 }
 
 setInterval(generateTwinkleStar, 1000);
-console.log("merhab twinklw")
 
 
 function l() {

@@ -1,12 +1,14 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { useEffect, useState } from 'react';
-import Navbar from '../Navbar';
 import { initBg } from '../../assets/js/stars';
 import profile from "../../assets/images/profile.png"
 import { BsDownload } from "react-icons/bs";
 import cv from "../../assets/static/salih_kuloglu_CV.pdf"
-import About from "../About"
+import Lottie from 'react-lottie';
+import scroll from '../../assets/static/scroll.json';
+import scroll_black from '../../assets/static/scroll_black.json';
+
 
 
 const index = () => {
@@ -19,30 +21,49 @@ const index = () => {
         initBg();
     }, []);
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: scroll,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+
+    };
+
+    const defaultOptions_black = {
+        loop: true,
+        autoplay: true, 
+        animationData: scroll_black,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+
+    };
+
 
   
 
 
     return (
         <>
-            <div className='w-full h-full relative'>
+            <div className='w-full h-screen overflow-hidden relative z-[1]'>
 
-             
-
-                <div className='absolute inset-0 block dark:hidden'>
+                <div className='absolute   inset-0 block dark:hidden '>
                     <div id='particles1' className='fixed inset-0 '></div>
                     <div id='particles2' className='fixed inset-0 '></div>
                     <div id='particles3' className='fixed inset-0 '></div>
                 </div>
 
-                <div className='absolute inset-0 bg-black hidden dark:block'>
+                <div className='absolute  inset-0  bg-black hidden dark:block '>
                     
                     <div id='stars1' className='fixed inset-0'></div>
                     <div id='stars2' className='fixed inset-0'></div>
                     <div id='stars3' className='fixed inset-0'></div>
                 </div>
 
-                <Navbar />
+                
+                
 
                 <div id="galaxy" className="fixed inset-0">
                     <div className="hidden dark:block">
@@ -98,7 +119,7 @@ const index = () => {
                     </svg>
                 </div>
 
-                <motion.section initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 0, opacity: 0 }} transition={{ duration: 0.7 }}  className="relative h-screen w-full">
+                <motion.section initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 0, opacity: 0 }} transition={{ duration: 0.7 }}  className="relative min-h-screen w-full">
                     <div id="planetcont" className="animate absolute inset-0 top-1/4 overflow-hidden show">
                         <div id="crescent" className="absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%">
                             <div id="planet" className="w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center">
@@ -133,12 +154,24 @@ const index = () => {
                             </div>
                     </div>
                 </motion.section>
+                <div className='absolute bottom-0  p-12 h-[140px] w-full hidden dark:flex items-center justify-center'>
+                    <Lottie options={defaultOptions}
+                        height={50}
+                        width={31}
+                        
+                        
+                    />
+                </div>
+                <div className='absolute bottom-0 p-12 h-[140px] w-full dark:hidden flex items-center justify-center'>
+                    <Lottie options={defaultOptions_black}
+                        height={50}
+                        width={31}
+                        
+                    />
+                </div>
 
-
-                <About/>
-                
-
-             </div>
+            </div>
+            
         </>
     )
 }
