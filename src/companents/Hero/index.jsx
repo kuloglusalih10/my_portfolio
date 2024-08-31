@@ -66,7 +66,7 @@ const index = () => {
                 
 
                 <div id="galaxy" className="fixed inset-0">
-                    <div className="hidden dark:block">
+                    <div className="hidden dark:block ">
                         <svg id="twinkle-star" className="template" width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="74" cy="74" r="11" fill="white"></circle>
                             <rect y="141.421" width="200" height="10" transform="rotate(-45 0 141.421)" fill="url(#paint0_linear_4_2)"></rect>
@@ -120,16 +120,16 @@ const index = () => {
                 </div>
 
                 <motion.section initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 0, opacity: 0 }} transition={{ duration: 0.7 }}  className="relative min-h-screen w-full">
-                    <div id="planetcont" className="animate absolute inset-0 top-1/4 overflow-hidden show">
+                    <div id="planetcont" className="animate absolute inset-0 top-1/4 overflow-hidden show ">
                         <div id="crescent" className="absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%">
                             <div id="planet" className="w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center">
-                                <div id="blur" className="w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl"></div>
+                                <div id="blur" className="w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl "></div>
                             </div>
                         </div>
                     </div>
-                    <div className="animate absolute h-full w-full flex items-center justify-center show">
+                    <div className="animate absolute h-full w-full flex items-center justify-center show ">
                         <div className="mt-[80px] relative w-full h-full flex items-center justify-center">
-                            <div className="p-5 pt-14 xs:pt-8 text-center">
+                            <div className="p-5 pt-14 xs:pt-8 text-center ">
                                 <img src={profile} alt="Ghulam Ahmed" className="object-cover w-36 h-36 xs:w-48 xs:h-48 rounded-full mx-auto border-4 border-neutral-600 dark:border-neutral-400"/>
                                     
                                     <p className="relative py-3 text-3xl sm:text-4xl md:text-5xl lg: text:6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-neutral-100 dark:to-neutral-600 text-center font-sans font-bold">
@@ -150,8 +150,8 @@ const index = () => {
                                         <span>Email me</span>
                                         <span className="w-2 h-2 rounded-full bg-green-400 duration-500 animate-pulse"></span>
                                     </a>
-                                </div>
                             </div>
+                        </div>
                     </div>
                 </motion.section>
                 <div className='absolute bottom-0  p-12 h-[140px] w-full hidden dark:flex items-center justify-center'>

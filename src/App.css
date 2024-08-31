@@ -69,6 +69,13 @@
     background-position: center, center 49px;
 }
 
+.grill_black{
+	background-image: radial-gradient(transparent, #000 87%), linear-gradient(90deg, #6c6a6a 0.7px, transparent 0.7px), linear-gradient(0deg, #6c6a6a 0.7px, transparent 0.7px);
+    background-repeat: repeat;
+    background-size: cover, 48px 48px, 48px 48px;
+    background-position: center, center 49px;
+}
+
 .own-font {
 	font-weight: 300;
 	font-size: 38px;
@@ -78,4 +85,16 @@
 
 .vertical-timeline-element-icon {
 	display: flex;
+}
+
+
+.vertical-timeline-element-content{
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important
+}
+
+
+.vertical-timeline-element-icon {
+    -webkit-box-shadow: 0 0 0 2px #afafaf, inset 0 1px 0 rgba(0, 0, 0, .08), 0 1px 0 1px rgba(0, 0, 0, .05) !important;
+    box-shadow: 0 0 0 2px #adadad, inset 0 1px 0 rgba(0, 0, 0, .08), 0 1px 0 2px rgba(0, 0, 0, .05) !important;
 }

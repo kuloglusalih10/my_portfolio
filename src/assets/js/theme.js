@@ -9,7 +9,14 @@ function changeTheme() {
     "dark" === t ? e.classList.add("dark") : e.classList.remove("dark"),
     window.getComputedStyle(n).opacity,
     document.head.removeChild(n),
-    localStorage.theme = t
+    localStorage.theme = t,
+    window.dispatchEvent(new Event("storage"));
+    if(t == 'dark'){
+      document.getElementById('experience').classList.add('grill_black');
+    }
+    else{
+      document.getElementById('experience').classList.remove('grill_black');
+    }
 }
 function preloadTheme() {
     const e = (()=>{
