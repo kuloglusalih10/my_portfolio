@@ -18,7 +18,7 @@ const index = () => {
     },[])
 
     return (
-        <div id='experience' className=' relative z-[2] bg-white dark:bg-black grill grill_black'>
+        <div id='experience' className=' relative z-[2] bg-white dark:bg-black grill pb-12'>
             <VerticalTimeline lineColor={'#5f6063' } >
                 <VerticalTimelineElement
 

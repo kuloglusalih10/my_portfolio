@@ -6,6 +6,7 @@ import Hero from "./companents/Hero"
 import About from "./companents/About"
 import Navbar from "./companents/Navbar"
 import Experience from "./companents/Experience"
+import Contact from "./companents/Contact"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Hero/>
       <About/>
       <Experience/>
+      <Contact/>
     </div>
   )
 }

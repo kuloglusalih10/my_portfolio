@@ -47,7 +47,7 @@ const index = () => {
 
     return (
         <>
-            <div className='w-full h-screen overflow-hidden relative z-[1]'>
+            <div className='w-full h-screen overflow-hidden relative z-[1] '>
 
                 <div className='absolute   inset-0 block dark:hidden '>
                     <div id='particles1' className='fixed inset-0 '></div>
@@ -128,7 +128,7 @@ const index = () => {
                         </div>
                     </div>
                     <div className="animate absolute h-full w-full flex items-center justify-center show ">
-                        <div className="mt-[80px] relative w-full h-full flex items-center justify-center">
+                        <div className="mt-[80px] relative w-full h-full flex items-center justify-center ">
                             <div className="p-5 pt-14 xs:pt-8 text-center ">
                                 <img src={profile} alt="Ghulam Ahmed" className="object-cover w-36 h-36 xs:w-48 xs:h-48 rounded-full mx-auto border-4 border-neutral-600 dark:border-neutral-400"/>
                                     
@@ -147,7 +147,7 @@ const index = () => {
                                         </a>
                                     </div>
                                     <a href="mailto:kuloglusalih10@gmail.com" className="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center group p-2 text-sm gap-x-2 mt-4">
-                                        <span>Email me</span>
+                                        <span>Let's work</span>
                                         <span className="w-2 h-2 rounded-full bg-green-400 duration-500 animate-pulse"></span>
                                     </a>
                             </div>

@@ -11,11 +11,11 @@ function changeTheme() {
     document.head.removeChild(n),
     localStorage.theme = t,
     window.dispatchEvent(new Event("storage"));
-    if(t == 'dark'){
-      document.getElementById('experience').classList.add('grill_black');
+    if(t == 'light'){
+      document.getElementById('experience').classList.remove('grill_black');
     }
     else{
-      document.getElementById('experience').classList.remove('grill_black');
+      document.getElementById('experience').classList.add('grill_black');
     }
 }
 function preloadTheme() {
