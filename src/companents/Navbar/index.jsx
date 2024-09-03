@@ -7,7 +7,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 import { IoMenuOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { initializeDrawerButton } from "../../assets/js/drawer";
-import { motion } from "framer-motion";
+import { ToastContainer } from "react-toastify";
 
 
 const navVariants = {
@@ -35,7 +35,8 @@ const Navbar = () => {
 	
 	return (
 		<>
-		<header  id="header" className="fixed top-0 w-full h-16 z-[999900]  sticky-1" data-astro-cid-3ef6ksr2="">
+		<header  id="header" className="fixed top-0 w-full h-16 z-[99999]  sticky-1" data-astro-cid-3ef6ksr2="">
+			<ToastContainer />
 			<div className="w-full h-full mx-auto px-5 max-w-screen-md">
 				<div className="relative h-full w-full" data-astro-cid-3ef6ksr2="">
 					<div className="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2="">
